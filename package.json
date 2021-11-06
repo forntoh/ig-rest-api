@@ -1,9 +1,10 @@
 {
   "name": "ig-rest-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "IG REST API Wrapper",
   "homepage": "https://github.com/forntoh/ig-rest-api",
   "author": "Forntoh Thomas <thomasforntoh@gmail.com>",
+  "main": "src/index.js",
   "license": "MIT",
   "keywords": [
     "ig",
