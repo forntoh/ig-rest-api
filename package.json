@@ -6,6 +6,7 @@
   "author": "Forntoh Thomas <thomasforntoh@gmail.com>",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
+  "type": "module",
   "files": [
     "src/"
   ],
