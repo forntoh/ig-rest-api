@@ -1,4 +1,4 @@
-import { path } from "rambda";
+const { path } = require("rambda");
 
 const statusCode = path("status");
 const statusText = path("statusText");
@@ -9,7 +9,7 @@ const params = path("params");
 const data = path("data");
 const url = path("url");
 
-export default function createError({ message, request, response, config }) {
+exports.createError = ({ message, request, response, config }) => {
   const error = new Error(message);
   error.type = response ? "response" : request ? "request" : "internal";
   if (config) {
@@ -25,4 +25,4 @@ export default function createError({ message, request, response, config }) {
     error.statusText = statusText(response);
   }
   return error;
-}
+};

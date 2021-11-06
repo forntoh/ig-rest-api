@@ -1,12 +1,11 @@
 {
   "name": "ig-rest-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "IG REST API Wrapper",
   "homepage": "https://github.com/forntoh/ig-rest-api",
   "author": "Forntoh Thomas <thomasforntoh@gmail.com>",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
-  "type": "module",
   "files": [
     "src/"
   ],
@@ -25,27 +24,13 @@
     "url": "https://github.com/forntoh/ig-rest-api/issues"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "npm run build",
     "start": "npm run build && node dist",
-    "restart": "rimraf dist && npm run start",
-    "dev": "nodemon --exec npm run restart"
+    "restart": "node dist && npm run start"
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "babel-plugin-inline-dotenv": "^1.6.0",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
     "rambda": "^6.9.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/node": "^7.16.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "nodemon": "^2.0.14",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.4.4"
-  }
+  "devDependencies": {}
 }

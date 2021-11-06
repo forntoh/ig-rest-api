@@ -1,13 +1,12 @@
-import { create, setHeaderTokens } from "./connection";
-import {
+const { create, setHeaderTokens } = require("./connection.js");
+const {
   uniqueId,
   getOption,
   isFunction,
   transformError,
   transformResponse,
-} from "./utils.js";
-
-export default class IG {
+} = require("./utils.js");
+class IG {
   static transformResponse = transformResponse;
   static transformError = transformError;
   static uniqueId = uniqueId;
@@ -86,3 +85,5 @@ export default class IG {
     return this.delete("session", 1, null, options);
   }
 }
+
+exports.IG = IG;

@@ -1,10 +1,10 @@
-import axios from "axios";
-import { path } from "rambda";
+const axios = require("axios").default;
+const { path } = require("rambda");
 
 const appToken = path("headers.x-security-token");
 const clientToken = path("headers.cst");
 
-export function create(apiKey, isDemo) {
+exports.create = (apiKey, isDemo) => {
   return axios.create({
     baseURL: `https://${isDemo ? "demo-" : ""}api.ig.com/gateway/deal/`,
     headers: {
@@ -13,9 +13,9 @@ export function create(apiKey, isDemo) {
       "X-IG-API-KEY": apiKey,
     },
   });
-}
+};
 
-export function setHeaderTokens(instance, response) {
+exports.setHeaderTokens = (instance, response) => {
   instance.defaults.headers["X-SECURITY-TOKEN"] = appToken(response);
   instance.defaults.headers["CST"] = clientToken(response);
-}
+};
