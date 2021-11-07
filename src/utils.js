@@ -6,10 +6,10 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const isFunction = pipe(type, equals("Function"));
 const isUndefined = pipe(type, equals("Undefined"));
 
-exports.get = (inputObject, inputPath, defaultValue) => {
+function get(inputObject, inputPath, defaultValue) {
   const inputValue = path(inputPath, inputObject);
   return isUndefined(inputValue) ? defaultValue : inputValue;
-};
+}
 
 exports.getOption = (key, options, defaults) => {
   return get(options, key, path(key, defaults));

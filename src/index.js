@@ -6,7 +6,7 @@ const {
   transformError,
   transformResponse,
 } = require("./utils.js");
-class IG {
+module.exports = class IG {
   static transformResponse = transformResponse;
   static transformError = transformError;
   static uniqueId = uniqueId;
@@ -84,6 +84,4 @@ class IG {
   logout(options) {
     return this.delete("session", 1, null, options);
   }
-}
-
-exports.IG = IG;
+};
